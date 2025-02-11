@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://in53n7ddjokr"]
+
+[ext_resource type="Script" path="res://mechanics/outfit_anchor/outfit_anchor.gd" id="1_xerqm"]
+
+[node name="OutfitAnchor" type="Node2D"]
+script = ExtResource("1_xerqm")
+drop_position = null
+outfit = null
+
+[node name="AnchorArea" type="Area2D" parent="."]
+
+[connection signal="area_entered" from="AnchorArea" to="." method="_on_anchor_area_area_entered"]
+[connection signal="area_exited" from="AnchorArea" to="." method="_on_anchor_area_area_exited"]

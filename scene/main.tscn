@@ -1,32 +1,37 @@
-[gd_scene load_steps=7 format=3 uid="uid://edds0f1a1dnc"]
+[gd_scene load_steps=6 format=3 uid="uid://dtc5ti4yjxb78"]
 
-[ext_resource type="Texture2D" uid="uid://b4dl710jdi0xu" path="res://texture/Dressed_up.png" id="1_flvs6"]
-[ext_resource type="Texture2D" uid="uid://dt2lsuknx5cwk" path="res://texture/Character_.png" id="1_ovg1n"]
-[ext_resource type="Texture2D" uid="uid://cflxpw8j1rl5e" path="res://texture/Hat_.png" id="3_xsuy2"]
-[ext_resource type="Texture2D" uid="uid://dwludb4fai3oj" path="res://texture/Shirt_.png" id="4_62s7f"]
-[ext_resource type="Texture2D" uid="uid://ddbwn740gdyuy" path="res://texture/Pant_.png" id="5_fnfun"]
-[ext_resource type="Texture2D" uid="uid://bwe6k30yqegdr" path="res://texture/Shoes_.png" id="6_ty3am"]
+[ext_resource type="PackedScene" uid="uid://bcskyyf2jjage" path="res://scene/character.tscn" id="1_2x8rh"]
+[ext_resource type="Texture2D" uid="uid://dwludb4fai3oj" path="res://texture/Shirt_.png" id="3_dxmkp"]
+[ext_resource type="PackedScene" uid="uid://bwcchncftfadm" path="res://mechanics/outfit/outfit.tscn" id="4_tyr04"]
 
-[node name="DressedUp" type="Sprite2D"]
-position = Vector2(360, 368)
-texture = ExtResource("1_flvs6")
+[sub_resource type="Gradient" id="Gradient_dstu2"]
+colors = PackedColorArray(0, 0, 0, 1, 0.175555, 0.243848, 0.260942, 1)
 
-[node name="Character" type="Sprite2D" parent="."]
-position = Vector2(600, 40)
-texture = ExtResource("1_ovg1n")
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_bxbsx"]
+gradient = SubResource("Gradient_dstu2")
 
-[node name="Hat" type="Sprite2D" parent="."]
-position = Vector2(600, -376)
-texture = ExtResource("3_xsuy2")
+[node name="Main" type="Node2D"]
 
-[node name="Shirt" type="Sprite2D" parent="."]
-position = Vector2(600, 112)
-texture = ExtResource("4_62s7f")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(569.989, 314.168)
+rotation = 1.57079
+scale = Vector2(2.90988, 1232.62)
+texture = SubResource("GradientTexture1D_bxbsx")
 
-[node name="Pant" type="Sprite2D" parent="."]
-position = Vector2(600, 288)
-texture = ExtResource("5_fnfun")
+[node name="Character" parent="." instance=ExtResource("1_2x8rh")]
+position = Vector2(552, 336)
+scale = Vector2(0.250063, 0.250063)
 
-[node name="Shoes" type="Sprite2D" parent="."]
-position = Vector2(600, 432)
-texture = ExtResource("6_ty3am")
+[node name="Hat" parent="." instance=ExtResource("4_tyr04")]
+position = Vector2(136, 400)
+outfit = 1
+
+[node name="Shirt" parent="." instance=ExtResource("4_tyr04")]
+position = Vector2(133, 536)
+outfit = 2
+
+[node name="Sprite2D" parent="Shirt" index="0"]
+texture = ExtResource("3_dxmkp")
+
+[editable path="Hat"]
+[editable path="Shirt"]

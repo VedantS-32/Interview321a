@@ -1,21 +1,71 @@
-[gd_scene load_steps=4 format=3 uid="uid://bu8r6sdvca7qw"]
+[gd_scene load_steps=8 format=3 uid="uid://bcskyyf2jjage"]
 
 [ext_resource type="Texture2D" uid="uid://dt2lsuknx5cwk" path="res://texture/Character_.png" id="1_0y4p4"]
-[ext_resource type="Script" path="res://mechanics/outfit_anchor/outfit_anchor.gd" id="2_yul6y"]
+[ext_resource type="PackedScene" uid="uid://in53n7ddjokr" path="res://mechanics/outfit_anchor/outfit_anchor.tscn" id="2_2kt1h"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_bpm3x"]
-radius = 250.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_b7ye8"]
+radius = 176.182
+
+[sub_resource type="Gradient" id="Gradient_iwldu"]
+offsets = PackedFloat32Array(0, 0.61086)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2tr4p"]
+gradient = SubResource("Gradient_iwldu")
+fill = 1
+fill_from = Vector2(0.5, 0.555556)
+
+[sub_resource type="Gradient" id="Gradient_psbtc"]
+resource_name = "Tex1"
+offsets = PackedFloat32Array(0, 0.515837)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_hl0gp"]
+resource_name = "Tex2"
+gradient = SubResource("Gradient_psbtc")
+fill = 1
+fill_from = Vector2(0.482906, 0.555556)
 
 [node name="Character" type="Node2D"]
 
 [node name="Character" type="Sprite2D" parent="."]
+z_index = 2
 texture = ExtResource("1_0y4p4")
 
-[node name="OutfitAnchor" type="Node2D" parent="."]
-position = Vector2(0, -344)
-script = ExtResource("2_yul6y")
+[node name="ShirtOutfitAnchor2" parent="Character" instance=ExtResource("2_2kt1h")]
+position = Vector2(0, 72)
+drop_position = null
+outfit = 2
 
-[node name="Area2D" type="Area2D" parent="OutfitAnchor"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Character/ShirtOutfitAnchor2/AnchorArea" index="0"]
+position = Vector2(0, 8)
+shape = SubResource("CircleShape2D_b7ye8")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="OutfitAnchor/Area2D"]
-shape = SubResource("CircleShape2D_bpm3x")
+[node name="PointLight2D" type="PointLight2D" parent="Character/ShirtOutfitAnchor2"]
+position = Vector2(4.76837e-07, -8)
+scale = Vector2(8, 8)
+energy = 0.0
+range_z_min = 0
+range_z_max = 1
+texture = SubResource("GradientTexture2D_2tr4p")
+
+[node name="HeadOutfitAnchor" parent="Character" instance=ExtResource("2_2kt1h")]
+position = Vector2(0, -424)
+drop_position = null
+outfit = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Character/HeadOutfitAnchor/AnchorArea" index="0"]
+z_index = 2
+position = Vector2(0, 112)
+shape = SubResource("CircleShape2D_b7ye8")
+
+[node name="PointLight2D" type="PointLight2D" parent="Character/HeadOutfitAnchor"]
+position = Vector2(8, 112)
+scale = Vector2(10.5649, 9.89913)
+energy = 4.25
+range_z_min = 0
+range_z_max = 1
+texture = SubResource("GradientTexture2D_hl0gp")
+
+[editable path="Character/ShirtOutfitAnchor2"]
+[editable path="Character/HeadOutfitAnchor"]
