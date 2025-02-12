@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://mechanics/outfit/outfit.gd" id="1_7cdr6"]
 [ext_resource type="Texture2D" uid="uid://cflxpw8j1rl5e" path="res://texture/Hat_.png" id="1_idy6a"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_2jclp"]
-radius = 27.0185
+[sub_resource type="CircleShape2D" id="CircleShape2D_nf4ne"]
+radius = 32.0
 
 [node name="Outfit" type="Node2D"]
 z_index = 3
@@ -18,7 +18,8 @@ texture = ExtResource("1_idy6a")
 [node name="OutfitCollision" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OutfitCollision"]
-shape = SubResource("CircleShape2D_2jclp")
+rotation = 1.57079
+shape = SubResource("CircleShape2D_nf4ne")
 
 [connection signal="mouse_entered" from="OutfitCollision" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="OutfitCollision" to="." method="_on_area_2d_mouse_exited"]

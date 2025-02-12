@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dtc5ti4yjxb78"]
+[gd_scene load_steps=5 format=3 uid="uid://dtc5ti4yjxb78"]
 
 [ext_resource type="PackedScene" uid="uid://bcskyyf2jjage" path="res://scene/character.tscn" id="1_2x8rh"]
-[ext_resource type="Script" path="res://scene/main.gd" id="1_3e0w0"]
 [ext_resource type="PackedScene" uid="uid://djcgawor61crc" path="res://mechanics/ItemPanel.tscn" id="3_0jwai"]
 
 [sub_resource type="Gradient" id="Gradient_dstu2"]
@@ -11,17 +10,22 @@ colors = PackedColorArray(0, 0, 0, 1, 0.175555, 0.243848, 0.260942, 1)
 gradient = SubResource("Gradient_dstu2")
 
 [node name="Main" type="Node2D"]
-script = ExtResource("1_3e0w0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(569.989, 314.168)
+position = Vector2(551, 314)
 rotation = 1.57079
-scale = Vector2(2.90988, 1232.62)
+scale = Vector2(16.7574, 6666.23)
 texture = SubResource("GradientTexture1D_bxbsx")
 
 [node name="Character" parent="." instance=ExtResource("1_2x8rh")]
 position = Vector2(552, 336)
 scale = Vector2(0.250063, 0.250063)
+
+[node name="Camera2D" type="Camera2D" parent="Character"]
+position = Vector2(-7.23853, -81.6503)
+rotation = 1.57079
+scale = Vector2(21.4895, 8548.7)
+zoom = Vector2(2, 2)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

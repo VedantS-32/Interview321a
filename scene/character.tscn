@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://in53n7ddjokr" path="res://mechanics/outfit_anchor/outfit_anchor.tscn" id="2_2kt1h"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b7ye8"]
-radius = 176.182
+radius = 306.62
 
 [sub_resource type="Gradient" id="Gradient_iwldu"]
 offsets = PackedFloat32Array(0, 0.61086)
@@ -16,7 +16,7 @@ fill = 1
 fill_from = Vector2(0.5, 0.555556)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5qajj"]
-radius = 128.25
+radius = 257.123
 
 [sub_resource type="Gradient" id="Gradient_a4tyf"]
 offsets = PackedFloat32Array(0, 0.760181)
@@ -39,17 +39,17 @@ fill = 1
 fill_from = Vector2(0.482906, 0.555556)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k7i3a"]
-radius = 64.0
-height = 272.0
+radius = 144.32
+height = 495.36
 
 [sub_resource type="Gradient" id="Gradient_y4maa"]
-offsets = PackedFloat32Array(0, 0.828054)
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+offsets = PackedFloat32Array(0, 0.664234)
+colors = PackedColorArray(0.838897, 0.838897, 0.838897, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ikau2"]
 gradient = SubResource("Gradient_y4maa")
 fill = 1
-fill_from = Vector2(0.517094, 0.465812)
+fill_from = Vector2(0.508547, 0.482906)
 
 [node name="Character" type="Node2D"]
 

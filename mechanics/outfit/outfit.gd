@@ -60,7 +60,7 @@ func _process(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	var sprite = find_child("Sprite2D") as Sprite2D
-	if event.is_action_pressed("Click") and sprite.get_rect().has_point(to_local(event.position)):
+	if event.is_action_pressed("Click") and sprite.get_rect().has_point(to_local(event.position) * 4):
 		isDragging = true
 		isEquiped = false
 	elif event.is_action_released("Click"):
