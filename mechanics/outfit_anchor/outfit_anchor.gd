@@ -15,24 +15,26 @@ func _process(delta: float) -> void:
 
 func _on_anchor_area_area_entered(area: Area2D) -> void:
 	var outfitInRange = area.get_parent() as Outfit
-	if not outfit:
-		print("Anchor outfit enum not selected")
-	elif not outfitInRange.outfit:
-		print("Outfit enum not selected")
-	elif outfitInRange.outfit == outfit:
-		var light = get_node("PointLight2D") as PointLight2D
-		var tween = create_tween()
-		tween.tween_property(light, "energy", 16, 0.5)
-		outfitInRange.anchorPos = self.global_position
-		outfitInRange.inRange = true
+	if outfitInRange:
+		if not outfit:
+			print("Anchor outfit enum not selected")
+		elif not outfitInRange.outfit:
+			print("Outfit enum not selected")
+		elif outfitInRange.outfit == outfit:
+			var light = get_node("PointLight2D") as PointLight2D
+			var tween = create_tween()
+			tween.tween_property(light, "energy", 16, 0.5)
+			outfitInRange.anchorPos = self.global_position
+			outfitInRange.inRange = true
 
 
 func _on_anchor_area_area_exited(area: Area2D) -> void:
 	var outfitInRange = area.get_parent() as Outfit
-	var light = get_node("PointLight2D") as PointLight2D
-	var tween = create_tween()
-	tween.tween_property(light, "energy", 0, 0.5)
-	outfitInRange.inRange = false
+	if outfitInRange:
+		var light = get_node("PointLight2D") as PointLight2D
+		var tween = create_tween()
+		tween.tween_property(light, "energy", 0, 0.5)
+		outfitInRange.inRange = false
 
 func turn_off_lights() -> void:
 	var light = get_node("PointLight2D") as PointLight2D

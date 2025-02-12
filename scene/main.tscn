@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://dtc5ti4yjxb78"]
 
 [ext_resource type="PackedScene" uid="uid://bcskyyf2jjage" path="res://scene/character.tscn" id="1_2x8rh"]
-[ext_resource type="Texture2D" uid="uid://dwludb4fai3oj" path="res://texture/Shirt_.png" id="3_dxmkp"]
-[ext_resource type="PackedScene" uid="uid://bwcchncftfadm" path="res://mechanics/outfit/outfit.tscn" id="4_tyr04"]
+[ext_resource type="Script" path="res://scene/main.gd" id="1_3e0w0"]
+[ext_resource type="PackedScene" uid="uid://djcgawor61crc" path="res://mechanics/ItemPanel.tscn" id="3_0jwai"]
 
 [sub_resource type="Gradient" id="Gradient_dstu2"]
 colors = PackedColorArray(0, 0, 0, 1, 0.175555, 0.243848, 0.260942, 1)
@@ -11,6 +11,7 @@ colors = PackedColorArray(0, 0, 0, 1, 0.175555, 0.243848, 0.260942, 1)
 gradient = SubResource("Gradient_dstu2")
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_3e0w0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(569.989, 314.168)
@@ -22,16 +23,6 @@ texture = SubResource("GradientTexture1D_bxbsx")
 position = Vector2(552, 336)
 scale = Vector2(0.250063, 0.250063)
 
-[node name="Hat" parent="." instance=ExtResource("4_tyr04")]
-position = Vector2(136, 400)
-outfit = 1
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Shirt" parent="." instance=ExtResource("4_tyr04")]
-position = Vector2(133, 536)
-outfit = 2
-
-[node name="Sprite2D" parent="Shirt" index="0"]
-texture = ExtResource("3_dxmkp")
-
-[editable path="Hat"]
-[editable path="Shirt"]
+[node name="ItemPanel" parent="CanvasLayer" instance=ExtResource("3_0jwai")]

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cflxpw8j1rl5e" path="res://texture/Hat_.png" id="1_idy6a"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2jclp"]
-radius = 40.0
+radius = 27.0185
 
 [node name="Outfit" type="Node2D"]
 z_index = 3

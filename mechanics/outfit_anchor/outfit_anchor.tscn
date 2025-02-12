@@ -4,8 +4,6 @@
 
 [node name="OutfitAnchor" type="Node2D"]
 script = ExtResource("1_xerqm")
-drop_position = null
-outfit = null
 
 [node name="AnchorArea" type="Area2D" parent="."]
 

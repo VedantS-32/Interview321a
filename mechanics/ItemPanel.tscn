@@ -1,0 +1,141 @@
+[gd_scene load_steps=8 format=3 uid="uid://djcgawor61crc"]
+
+[ext_resource type="Script" path="res://mechanics/item_panel.gd" id="1_pvbiq"]
+[ext_resource type="Texture2D" uid="uid://cflxpw8j1rl5e" path="res://texture/Hat_.png" id="2_8cry4"]
+[ext_resource type="Texture2D" uid="uid://dwludb4fai3oj" path="res://texture/Shirt_.png" id="3_td1cu"]
+[ext_resource type="Texture2D" uid="uid://ddbwn740gdyuy" path="res://texture/Pant_.png" id="4_lbjct"]
+[ext_resource type="Texture2D" uid="uid://bwe6k30yqegdr" path="res://texture/Shoes_.png" id="5_osk8f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kq8up"]
+bg_color = Color(0.340339, 0.340339, 0.340339, 0.588235)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jr1kr"]
+bg_color = Color(0.415863, 0.606335, 0.743932, 0.647059)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="ItemPanel" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pvbiq")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1152.0
+grow_horizontal = 0
+grow_vertical = 2
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="HBoxContainer"]
+modulate = Color(0.720467, 0.720468, 0.720467, 1)
+custom_minimum_size = Vector2(175, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_styles/panel = SubResource("StyleBoxFlat_kq8up")
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="HBoxContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="HBoxContainer/Panel/MarginContainer/VBoxContainer/AspectRatioContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jr1kr")
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Panel/MarginContainer/VBoxContainer/AspectRatioContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_8cry4")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="HBoxContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="HBoxContainer/Panel/MarginContainer/VBoxContainer/AspectRatioContainer2"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jr1kr")
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Panel/MarginContainer/VBoxContainer/AspectRatioContainer2/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_td1cu")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="AspectRatioContainer3" type="AspectRatioContainer" parent="HBoxContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="HBoxContainer/Panel/MarginContainer/VBoxContainer/AspectRatioContainer3"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jr1kr")
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Panel/MarginContainer/VBoxContainer/AspectRatioContainer3/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_lbjct")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="AspectRatioContainer4" type="AspectRatioContainer" parent="HBoxContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="HBoxContainer/Panel/MarginContainer/VBoxContainer/AspectRatioContainer4"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jr1kr")
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Panel/MarginContainer/VBoxContainer/AspectRatioContainer4/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_osk8f")
+expand_mode = 4
+stretch_mode = 5
